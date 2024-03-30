@@ -13,7 +13,7 @@ app.use(cors())
 app.post('/env/var', async (req, res) => {
     let resp = {}
 
-    req.body?.keys?.forEach(key => resp[key] = process.env[key].substring(0, process.env[key].length - 1))
+    req.body?.keys?.forEach(key => resp[key] = process.env[key])
 
     res.json(resp)
 });
